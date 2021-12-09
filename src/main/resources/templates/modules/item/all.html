@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title>商品一覧</title>
+    </head>
+    <body>
+    	<table border="1">
+    		<thead>
+    			<tr>
+    				<th>filename</th>
+    				<th>image</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr th:each="item : ${items}">
+    				<td th:text="${item.name}"></td>
+    				<td>
+    					<img alt="" th:src="*{'data:image/jpeg;base64,'+{item.image}}" style="width: 100px;height: 100px;"></th>
+    				</td>
+    			</tr>
+    		</tbody>
+    	</table>
+  
+    </body>
+</html>
